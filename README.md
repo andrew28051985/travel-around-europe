@@ -21,3 +21,4 @@
 
 - Собрать стили: `npm run styles`
 - Собрать скрипты: `npm run scripts`
+- Собрать проект: `npm run build`
