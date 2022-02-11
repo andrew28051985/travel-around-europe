@@ -1,22 +1,23 @@
-const gulp = require("gulp");
-const plumber = require("gulp-plumber");
-const sourcemap = require("gulp-sourcemaps");
-const sass = require("gulp-sass");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const sync = require("browser-sync").create();
-const htmlmin = require("gulp-htmlmin");
-const csso = require("postcss-csso");
-const rename = require("gulp-rename");
-const terser = require("gulp-terser");
-const imagemin = require("gulp-imagemin");
-const webp = require("gulp-webp");
-const svgstore = require("gulp-svgstore");
-const del = require("del");
+import gulp from "gulp";
+import plumber from "gulp-plumber";
+import sourcemap from "gulp-sourcemaps";
+import sass from "gulp-dart-sass";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import sync from "browser-sync";
+import htmlmin from "gulp-htmlmin";
+import csso from "postcss-csso";
+import rename from "gulp-rename";
+import terser from "gulp-terser";
+import imagemin from "gulp-imagemin";
+import webp from "gulp-webp";
+import svgo from "gulp-svgmin";
+import svgstore from "gulp-svgstore";
+import del from "del";
 
 // Styles
 
-const csscreate = () => {
+export const csscreate = () => {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
@@ -28,11 +29,9 @@ const csscreate = () => {
     .pipe(gulp.dest("build/css"));
 }
 
-exports.csscreate = csscreate;
-
 /* CSS не минимизированный */
 
-const styles = () => {
+export const styles = () => {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
@@ -47,8 +46,6 @@ const styles = () => {
     .pipe(sync.stream());
 }
 
-exports.styles = styles;
-
 /* HTML */
 
 const html = () => {
@@ -58,19 +55,15 @@ const html = () => {
     .pipe(sync.stream());
 }
 
-exports.html = html;
-
 /* Скрипты */
 
 const scripts = () => {
-  return gulp.src("source/js/navigation.js")
+  return gulp.src("source/js/main.js")
     .pipe(terser())
-    .pipe(rename("navigation.min.js"))
+    .pipe(rename("main.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
-
-exports.scripts = scripts;
 
 /* Картинки */
 
@@ -84,14 +77,10 @@ const optimizeImages = () => {
     .pipe(gulp.dest("build/img"));
 }
 
-exports.optimizeImages = optimizeImages;
-
 const copyImages = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(gulp.dest("build/img"));
 }
-
-exports.copyImages = copyImages;
 
 const createWebp = () => {
   return gulp.src("source/img/**/*.{jpg,png}")
@@ -99,7 +88,22 @@ const createWebp = () => {
     .pipe(gulp.dest("build/img"))
 }
 
-exports.createWebp = createWebp;
+// SVG
+
+const svg = () =>
+  gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
+    .pipe(svgo())
+    .pipe(gulp.dest('build/img'));
+
+const sprite = () => {
+  return gulp.src('source/img/icons/*.svg')
+    .pipe(svgo())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('build/img'));
+}
 
 /* Шрифты, фавиконки, svg */
 
@@ -115,15 +119,11 @@ const copy = (done) => {
   done();
 }
 
-exports.copy = copy;
-
 /* Удаление папки build */
 
-const clean = () => {
+export const clean = () => {
   return del("build");
 };
-
-exports.clean = clean;
 
 // Server
 
@@ -139,19 +139,24 @@ const server = (done) => {
   done();
 }
 
-exports.server = server;
+// Reload
+
+const reload = (done) => {
+  browser.reload();
+  done();
+}
 
 // Watcher
 
 const watcher = () => {
-  gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
-  gulp.watch("source/*.html").on("change",gulp.series("html") ,sync.reload);
-  gulp.watch("source/js/navigation.js", gulp.series("scripts"));
+  gulp.watch("source/sass/**/*.scss", gulp.series(styles));
+  gulp.watch('source/*.html', gulp.series(html, reload));
+  gulp.watch("source/js/*.js", gulp.series(scripts));
 }
 
 /* Автоматизация для готового проекта */
 
-const build = gulp.series(
+export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
@@ -159,15 +164,15 @@ const build = gulp.series(
     styles,
     html,
     scripts,
+    svg,
+    sprite,
     createWebp
   ),
 );
 
-exports.build = build;
-
 /* Автоматизация для разработки */
 
-exports.default = gulp.series(
+export default gulp.series(
   clean,
   copy,
   copyImages,
@@ -175,6 +180,8 @@ exports.default = gulp.series(
     styles,
     html,
     scripts,
+    svg,
+    sprite,
     createWebp
   ),
   gulp.series(
