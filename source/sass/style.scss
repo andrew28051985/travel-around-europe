@@ -1,11 +1,9 @@
-body {
-  width: 1280px;
-  margin: 0 auto;
-  & .title-main {
-    text-align: center;
-  }
-}
+@import "global/normalize";
+@import "global/font.scss";
+@import "global/variable";
+@import "blocks/page";
+@import "global/visually-hidden";
+@import "blocks/page-header";
+@import "blocks/page-main";
+@import "blocks/page-footer";
 
-.text {
-  text-align: center;
-}

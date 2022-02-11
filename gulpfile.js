@@ -142,7 +142,7 @@ const server = (done) => {
 // Reload
 
 const reload = (done) => {
-  browser.reload();
+  sync.reload();
   done();
 }
 
