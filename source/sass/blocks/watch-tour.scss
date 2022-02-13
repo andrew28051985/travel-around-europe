@@ -1,0 +1,48 @@
+.watch-tour {
+  &__image-block {
+    background-color: $dodgerBlue;
+    @media (max-width: $mobile-width-only) {
+      box-sizing: border-box;
+      height: 235px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("../img/background-mini.jpg") no-repeat;
+    }
+  }
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: $basik-light;
+  }
+
+  &__text-block {
+    @media (max-width: $mobile-width-only) {
+      padding: 20px 16px;
+      line-height: 27px;
+      color: #2C2E3F;
+      & p {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 40px;
+      top: 16px;
+      width: 18px;
+      height: 18px;
+      background: url("../img/icon/icon-arrow-down.svg") no-repeat;
+    }
+  }
+}
