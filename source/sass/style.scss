@@ -2,8 +2,17 @@
 @import "global/font.scss";
 @import "global/variable";
 @import "blocks/page";
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 @import "global/visually-hidden";
 @import "blocks/page-header";
+@import "blocks/logo";
 @import "blocks/main-nav";
 @import "blocks/phone-link";
 @import "blocks/page-main";
