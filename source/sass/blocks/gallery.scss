@@ -26,7 +26,8 @@
       z-index: 1;
     }
 
-    &:hover::before {
+    &:hover::before,
+    &:focus::before {
       content: "";
       position: absolute;
       top: 0;
@@ -37,7 +38,8 @@
       z-index: 2;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus::after  {
       content: "смотреть подробнее";
       position: absolute;
       display: block;
