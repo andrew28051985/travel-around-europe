@@ -1,0 +1,21 @@
+.places-visit {
+  &__wrapper {
+    @media (max-width: $mobile-width-only) {
+      padding: 0 16px;
+    }
+  }
+
+  &__title,
+  &__title-wrapper {
+    @media (max-width: $mobile-width-only) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 28px;
+    letter-spacing: -0.466667px;
+    color: $basic-dark;
+  }
+}

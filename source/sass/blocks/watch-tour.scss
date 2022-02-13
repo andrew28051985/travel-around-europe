@@ -1,4 +1,8 @@
 .watch-tour {
+  @media (max-width: $mobile-width-only) {
+    margin-bottom: 60px;
+  }
+
   &__image-block {
     background-color: $dodgerBlue;
     @media (max-width: $mobile-width-only) {
