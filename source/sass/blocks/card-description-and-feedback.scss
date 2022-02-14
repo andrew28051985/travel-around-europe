@@ -1,0 +1,100 @@
+.card-description-and-feedback {
+  &__wrapper-description{
+    margin-bottom: 50px;
+    padding: 0 16px;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+  &__title-description {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    color: $second-dark;
+  }
+  &__text-description {
+    letter-spacing: -0.466667px;
+    color: $basic-dark;
+  }
+
+  &__button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__wrapper-feedback {
+    position: relative;
+    display: none;
+    margin-bottom: 111px;
+
+    &--active {
+      display: block;
+      height: 415px;
+    }
+  }
+
+  &__wrapper-feedback--greece {
+    background: $dodgerBlue url("../img/greece-bg-mini.jpg") no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+  }
+
+  &__container {
+    position: absolute;
+    content: "";
+    top: 50px;
+    left: 26px;
+    width: 268px;
+    padding: 30px 20px 34px;
+    box-sizing: border-box;
+    background-color: $basik-light;
+  }
+
+  &__title-feedback {
+    position: relative;
+    margin: 0;
+    margin-bottom: 31px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.691667px;
+    color: $second-dark;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 80px;
+      width: 68px;
+      height: 1px;
+      background-color: $basik-accent;
+    }
+  }
+
+  &__text-feedback {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    letter-spacing: -0.408333px;
+  }
+
+  &__client-foto {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1px;
+    border-radius: 50%;
+  }
+
+  &__client-name {
+    margin: 0;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.466667px;
+    color: $second-dark;
+  }
+}

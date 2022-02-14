@@ -1,0 +1,122 @@
+.price {
+  margin-bottom: 50px;
+
+  &__wrapper {
+    padding: 0 16px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 27px;
+  }
+
+  &__title-contact {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 34px;
+    color: $link-dark;
+  }
+
+  &__link-contact {
+    font-size: 18px;
+    line-height: 32px;
+    color: $basik-accent;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+    padding-bottom: 95px;
+    border: 1px solid $nav-dark;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+
+    &:hover {
+      padding: 28px 18px;
+      padding-bottom: 95px;
+      border: 3px solid $basik-accent;
+      border-bottom: none;
+    }
+    &:hover h3,
+    &:hover span {
+      color: $basik-accent;
+    }
+    &:hover .price__item-description-item::before {
+      background: url("../img/icon/icon-check-hover.svg") no-repeat;
+    }
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__item-title {
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 34px;
+    color: $title-accent;
+  }
+
+  &__item-price {
+    display: block;
+    margin-bottom: 11px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 34px;
+    color: $title-accent;
+  }
+
+  &__item-title-description {
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $second-dark;
+    border-bottom: 1px solid $nav-dark;
+  }
+
+  &__item-description-list {
+    padding-left: 30px;
+  }
+
+  &__item-description-item {
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 32px;
+    color: $second-dark;
+    text-align: left;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 12px;
+      top: 10px;
+      left: -30px;
+      background: url("../img/icon/icon-check-accent.svg") no-repeat;
+    }
+  }
+
+  &__item-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    outline: none;
+  }
+}

@@ -1,0 +1,39 @@
+.section-nav {
+  border-bottom: 1px solid $nav-dark;
+
+  &__list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  &__list::-webkit-scrollbar {
+    width: 0;
+  }
+  &__item {
+    margin-right: 99px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  &__item:last-child {
+    margin-right: 16px;
+  }
+
+  &__link {
+    color: $nav-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $basik-accent;
+    }
+
+    &--active {
+      color: $basik-accent;
+      cursor: auto;
+    }
+  }
+}
+
