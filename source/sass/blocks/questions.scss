@@ -1,0 +1,22 @@
+.questions {
+  &__wrapper {
+    padding: 50px 16px;
+    background-color: $second-light;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 32px;
+    color: $link-dark;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 24px;
+    color: $link-dark;
+  }
+}
