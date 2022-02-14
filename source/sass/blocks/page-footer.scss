@@ -1,5 +1,105 @@
 .page-footer {
   width: 320px;
   margin: 0 auto;
+  padding-bottom: 26px;
   text-align: center;
+
+  &__wrapper {
+    padding: 0 16px;
+  }
+
+  &__next-trips {
+    display: grid;
+    gap: 20px 0;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $line-footer;
+  }
+  &__next-trips-list:last-child:nth-child(4n-2),
+  &__next-trips-list:last-child:nth-child(2n) {
+    grid-column: 1/-1;
+    justify-self: stretch;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    justify-self: stretch;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+    color: $link-dark;
+  }
+  &__title--trips {
+    margin-bottom: 0;
+  }
+
+  &__next-trips-item-link {
+    font-size: 14px;
+    line-height: 17px;
+    color: $gallery-hover;
+    text-decoration: none;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $basik-accent;
+    }
+  }
+
+  &__contacts-list {
+    margin-bottom: 30px;
+    padding-bottom: 29px;
+    border-bottom: 1px solid $line-footer;
+  }
+  &__contacts-item {
+    position: relative;
+    margin-bottom: 21px;
+  }
+  &__contacts-item:last-child {
+    margin-bottom: 0;
+  }
+  &__contacts-item a {
+    color: $basik-accent;
+  }
+  &__link-email {
+    display: block;
+    padding-left: 45px;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    &:hover svg,
+    &:focus svg{
+      color: $basik-accent;
+    }
+  }
+  &__link-email svg {
+    position: absolute;
+    left: 5px;
+    top: -2px;
+    color: $line-footer;
+  }
+  &__link-phone {
+    line-height: 32px;
+    &:hover svg,
+    &:focus svg{
+      color: $basik-accent;
+    }
+  }
+  &__link-phone svg {
+    position: absolute;
+    left: 25px;
+    top: -2px;
+    color: $line-footer;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+    color: $footer-text;
+  }
 }
