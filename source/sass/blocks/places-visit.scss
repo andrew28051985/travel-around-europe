@@ -1,7 +1,15 @@
 .places-visit {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 95px;
+  }
+
   &__wrapper {
     @media (max-width: $mobile-width-only) {
       padding: 0 16px;
+    }
+
+    @media (min-width: $tablet-width) {
+      padding: 0 76px;
     }
   }
 
@@ -10,6 +18,9 @@
     @media (max-width: $mobile-width-only) {
       margin-bottom: 20px;
     }
+    @media (min-width: $tablet-width) {
+      margin-bottom: 40px;
+    }
   }
 
   &__text {
@@ -17,5 +28,10 @@
     line-height: 28px;
     letter-spacing: -0.466667px;
     color: $basic-dark;
+
+    @media (min-width: $tablet-width) {
+      width: 343px;
+      margin: 0 auto;
+    }
   }
 }

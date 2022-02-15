@@ -7,6 +7,11 @@
     &--active {
       display: block;
     }
+
+    @media (min-width: $tablet-width) {
+      padding: 0 24px;
+      margin-bottom: 30px;
+    }
   }
   &__title-description {
     margin: 0;
@@ -15,16 +20,30 @@
     font-weight: 600;
     line-height: 36px;
     color: $second-dark;
+
+    @media (min-width: $tablet-width) {
+      font-size: 30px;
+      line-height: 45px;
+    }
   }
   &__text-description {
     letter-spacing: -0.466667px;
     color: $basic-dark;
+
+    @media (min-width: $tablet-width) {
+      margin: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__button {
     border: none;
     outline: none;
     cursor: pointer;
+
+    @media (min-width: $tablet-width) {
+      width: 250px;
+    }
   }
 
   &__wrapper-feedback {
@@ -42,6 +61,10 @@
     background: $dodgerBlue url("../img/greece-bg-mini.jpg") no-repeat;
     background-origin: content-box;
     background-size: cover;
+
+    @media (min-width: $tablet-width) {
+      background: $dodgerBlue url("../img/greece-bg.jpg") no-repeat;
+    }
   }
 
   &__container {
@@ -53,6 +76,14 @@
     padding: 30px 20px 34px;
     box-sizing: border-box;
     background-color: $basik-light;
+
+    @media (min-width: $tablet-width) {
+      width: 382px;
+      padding: 30px;
+      left: 193px;
+      top: 80px;
+      text-align: left;
+    }
   }
 
   &__title-feedback {
@@ -65,6 +96,11 @@
     letter-spacing: -0.691667px;
     color: $second-dark;
 
+    @media (min-width: $tablet-width) {
+      font-size: 30px;
+      line-height: 37px;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -73,6 +109,10 @@
       width: 68px;
       height: 1px;
       background-color: $basik-accent;
+
+      @media (min-width: $tablet-width) {
+        left: 0;
+      }
     }
   }
 
@@ -81,6 +121,18 @@
     margin-bottom: 20px;
     font-size: 14px;
     letter-spacing: -0.408333px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__wrapper-client {
+    @media (min-width: $tablet-width) {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
   }
 
   &__client-foto {
@@ -88,6 +140,10 @@
     height: 38px;
     margin-bottom: 1px;
     border-radius: 50%;
+
+    @media (min-width: $tablet-width) {
+      margin-right: 16px;
+    }
   }
 
   &__client-name {

@@ -1,7 +1,23 @@
 .gallery {
+  @media (min-width: $tablet-width) {
+    &__list {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: repeat(2,1fr);
+      align-items: center;
+    }
+  }
+
   &__item {
     @media (max-width: $mobile-width-only) {
       margin-bottom: 35px;
+    }
+
+    @media (min-width: $tablet-width) {
+      &:last-child:nth-child(2n-1) {
+        grid-column: 1/-1;
+        justify-self: stretch;
+      }
     }
   }
 
