@@ -1,8 +1,16 @@
 .price {
   margin-bottom: 50px;
 
+  @media (min-width: $tablet-width) {
+    margin-bottom: 110px;
+  }
+
   &__wrapper {
     padding: 0 16px;
+
+    @media (min-width: $tablet-width) {
+      padding: 0 21px;
+    }
   }
 
   &__description {
@@ -17,6 +25,10 @@
     margin: 0;
     margin-bottom: 20px;
     line-height: 27px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 30px;
+    }
   }
 
   &__title-contact {
@@ -34,6 +46,15 @@
     color: $basik-accent;
   }
 
+  &__list {
+    @media (min-width: $tablet-width) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: start;
+    }
+  }
+
   &__item {
     position: relative;
     margin-bottom: 30px;
@@ -42,6 +63,13 @@
     border: 1px solid $nav-dark;
     border-bottom: none;
     border-radius: 6px 6px 0 0;
+
+    @media (min-width: $tablet-width) {
+      box-sizing: border-box;
+      width: 288px;
+      height: 629px;
+      margin: 0;
+    }
 
     &:hover {
       padding: 28px 18px;

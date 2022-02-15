@@ -9,4 +9,11 @@
     text-align: center;
     color: $second-dark;
   }
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+    color: $second-dark;
+  }
 }
