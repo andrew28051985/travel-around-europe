@@ -33,6 +33,10 @@
     color: $title-dark;
     cursor: pointer;
 
+    @media (min-width: $tablet-width) {
+      flex-basis: 269px;
+    }
+
     &:invalid {
       border: 1px solid $basik-accent;
     }
@@ -44,6 +48,12 @@
   &__button {
     border: none;
     outline: none;
+
+    @media (min-width: $tablet-width) {
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__invalid {

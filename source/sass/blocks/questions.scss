@@ -1,9 +1,28 @@
 .questions {
   margin-bottom: 60px;
 
+  @media (min-width: $tablet-width) {
+    margin-bottom: 80px;
+  }
+
   &__wrapper {
     padding: 50px 16px;
     background-color: $second-light;
+
+    @media (min-width: $tablet-width) {
+      padding: 70px 54px 69px 55px;
+      background: $accent-hover url("../img/question-bg-medium.jpg") no-repeat;
+    }
+  }
+
+  &__container {
+    @media (min-width: $tablet-width) {
+      width: 658px;
+      margin: 0 auto;
+      padding: 50px;
+      box-sizing: border-box;
+      background-color: $second-light;
+    }
   }
 
   &__title {
@@ -13,6 +32,10 @@
     font-weight: 600;
     line-height: 32px;
     color: $link-dark;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
@@ -20,5 +43,18 @@
     margin-bottom: 20px;
     line-height: 24px;
     color: $link-dark;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__form {
+    @media (min-width: $tablet-width) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
