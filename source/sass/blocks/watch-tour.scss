@@ -7,14 +7,32 @@
   }
 
   &__wrapper {
+    background-color: $dodgerBlue;
+    background: url("../img/background-mini.jpg") no-repeat;
     @media (min-width: $tablet-width) {
       position: relative;
       width: 768px;
+      background: url("../img/background-medium.jpg") no-repeat;
+    }
+    @media (min-width: $desktop-width) {
+      min-width: 1280px;
+      width: 100%;
+      background: url("../img/background-maxi.jpg") no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__container {
+    @media (min-width: $desktop-width) {
+      box-sizing: border-box;
+      width: 1280px;
+      margin: 0 auto;
+      padding: 0 55px;
+      padding-bottom: 289px;
     }
   }
 
   &__image-block {
-    background-color: $dodgerBlue;
     @media (max-width: $mobile-width-only) {
       box-sizing: border-box;
       height: 235px;
@@ -22,12 +40,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: url("../img/background-mini.jpg") no-repeat;
     }
-    @media (min-width: $tablet-width) {
+    @media (min-width: $tablet-width) and (max-width: $tablet-width-only){
       height: 284px;
       padding-top: 60px;
-      background: url("../img/background-medium.jpg") no-repeat;
+    }
+    @media (min-width: $desktop-width) {
+      box-sizing: border-box;
+      width: 412px;
+      margin-left: auto;
+      margin-bottom: 30px;
+      padding-top: 185px;
     }
   }
   &__title {
@@ -41,6 +64,17 @@
     @media (min-width: $tablet-width) {
       font-size: 30px;
       line-height: 45px;
+    }
+    @media (min-width: $desktop-width) {
+      font-size: 55px;
+      line-height: 80px;
+      letter-spacing: -1.10667px;
+      text-align: left;
+    }
+  }
+  &__title br {
+    @media (max-width: $tablet-width-only) {
+      display: none;
     }
   }
 
@@ -56,6 +90,10 @@
         letter-spacing: -0.466667px;
         color: $basik-light;
       }
+      @media (min-width: $desktop-width) {
+        margin-bottom: 40px;
+        text-align: left;
+      }
     }
 
     @media (max-width: $mobile-width-only) {
@@ -63,12 +101,19 @@
       line-height: 27px;
       color: #2C2E3F;
     }
-    @media (min-width: $tablet-width) {
+    @media (min-width: $tablet-width) and (max-width:$tablet-width-only) {
       position: absolute;
       top: 120px;
       left: 185px;
       width: 398px;
       margin: 0 auto;
+    }
+    @media (min-width: $desktop-width) {
+      width: 340px;
+      padding-left: 760px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
   }
 
@@ -83,9 +128,20 @@
       width: 18px;
       height: 18px;
       background: url("../img/icon/icon-arrow-down.svg") no-repeat;
+      @media (min-width: $desktop-width) {
+        top: 30px;
+      }
     }
     @media (min-width: $tablet-width) {
       width: 250px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 340px;
+      height: 75px;
+      padding: 30px 40px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
     }
   }
 }
