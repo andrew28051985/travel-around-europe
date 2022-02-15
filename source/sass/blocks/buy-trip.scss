@@ -4,10 +4,22 @@
   margin: 0 auto;
   background-color: $second-light;
 
+  @media (min-width: $tablet-width) {
+    width: 720px;
+    height: 444px;
+    background: $second-light url("../img/modal-bg.jpg") no-repeat;
+  }
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
     padding: 100px 16px 185px;
+
+    @media (min-width: $tablet-width) {
+      width: 386px;
+      margin-left: auto;
+      padding: 72px 60px 89px 0;
+    }
   }
   &__close-button {
     position: absolute;
@@ -43,5 +55,31 @@
     margin: 0;
     margin-bottom: 50px;
     text-align: center;
+
+    @media (min-width:$tablet-width) {
+      width: 267px;
+      margin-left: auto;
+    }
+  }
+
+  &__form {
+    @media (min-width:$tablet-width) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 267px;
+      margin-left: auto;
+    }
+  }
+  &__form input {
+    @media (min-width:$tablet-width) {
+      flex-shrink: 1;
+    }
+  }
+  &__form button {
+    @media (min-width:$tablet-width) {
+      width: 174px;
+      margin: 0 auto;
+    }
   }
 }

@@ -4,8 +4,21 @@
   padding-bottom: 26px;
   text-align: center;
 
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    padding-bottom: 54px;
+  }
+
   &__wrapper {
     padding: 0 16px;
+
+    @media (min-width: $tablet-width) {
+      padding: 0 21px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 
   &__next-trips {
@@ -17,11 +30,25 @@
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid $line-footer;
+
+    @media (min-width: $tablet-width) {
+      flex-basis: 345px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-right: 50px;
+      padding-right: 49px;
+      padding-bottom: 0;
+      text-align: left;
+      border-bottom: none;
+      border-right: 1px solid $line-footer;
+    }
   }
-  &__next-trips-list:last-child:nth-child(4n-2),
-  &__next-trips-list:last-child:nth-child(2n) {
-    grid-column: 1/-1;
-    justify-self: stretch;
+
+  @media (max-width: $mobile-width-only) {
+    &__next-trips-list:last-child:nth-child(4n-2),
+    &__next-trips-list:last-child:nth-child(2n) {
+      grid-column: 1/-1;
+      justify-self: stretch;
+    }
   }
 
   &__title {
@@ -38,9 +65,17 @@
     margin-bottom: 0;
   }
 
-  &__next-trips-item-link {
+  &__next-trips-item {
     font-size: 14px;
     line-height: 17px;
+    margin-bottom: 10px;
+  }
+
+  &__next-trips-item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__next-trips-item-link {
     color: $gallery-hover;
     text-decoration: none;
     &:hover,
@@ -50,10 +85,20 @@
     }
   }
 
+  &__contacts {
+    @media (min-width: $tablet-width) {
+      text-align: left;
+    }
+  }
+
   &__contacts-list {
     margin-bottom: 30px;
     padding-bottom: 29px;
     border-bottom: 1px solid $line-footer;
+
+    @media (min-width: $tablet-width) {
+      border-bottom: none;
+    }
   }
   &__contacts-item {
     position: relative;
@@ -81,9 +126,16 @@
     left: 5px;
     top: -2px;
     color: $line-footer;
+
+    @media (min-width: $tablet-width) {
+      left: 0;
+    }
   }
   &__link-phone {
     line-height: 32px;
+    @media (min-width: $tablet-width) {
+      padding-left: 45px;
+    }
     &:hover svg,
     &:focus svg{
       color: $basik-accent;
@@ -94,6 +146,10 @@
     left: 25px;
     top: -2px;
     color: $line-footer;
+
+    @media (min-width: $tablet-width) {
+      left: 0;
+    }
   }
 
   &__text {
@@ -101,5 +157,12 @@
     font-size: 14px;
     line-height: 24px;
     color: $footer-text;
+  }
+
+  &__corporate-travel {
+    @media (min-width: $tablet-width) {
+      padding-top: 30px;
+      border-top: 1px solid $line-footer;
+    }
   }
 }

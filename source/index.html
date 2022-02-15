@@ -408,7 +408,7 @@
               <label class="form__label visually-hidden" for="email">Email</label>
               <span class="form__invalid form__invalid--email">Данные не верны</span>
               <input class="form__input" type="email" id="email" name="email" placeholder="E-mail">
-              <button class="form__button button">
+              <button class="form__button button" type="submit">
                 отправить
               </button>
             </form>
@@ -557,18 +557,18 @@
           <input class="form__input form__input--phone" type="tel" id="phone" name="phone" placeholder="Введите 10 цифр номера" required>
           <label class="form__label visually-hidden" for="email">Email</label>
           <input class="form__input" type="email" id="email" name="email" placeholder="E-mail">
-          <button class="form__button button" type="button">
+          <button class="form__button button" type="submit">
             отправить
           </button>
         </form>
       </div>
     </modal>
 
-    <modal class="form-send-ok">
+    <modal class="form-send-ok form-send-ok--no-active">
       <div class="form-send-ok__wrapper">
         <button class="form-send-ok__close-button" type="button"></button>
         <p class="form-send-ok__text">
-          Форма успешно отправлена, спасибо! :)
+          Форма успешно отправлена, <br>спасибо! :)
         </p>
       </div>
     </modal>
