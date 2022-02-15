@@ -1,0 +1,49 @@
+.form-send-ok {
+  display: none;
+  width: 320px;
+  margin: 0 auto;
+
+  &__wrapper {
+    position: relative;
+    padding: 100px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $second-light;
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    outline: none;
+    background-color: $second-light;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      width: 22px;
+      height: 1px;
+      background-color: $toggle-closed;
+      cursor: pointer;
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+  }
+}
