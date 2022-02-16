@@ -4,6 +4,11 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 110px;
   }
+  @media (min-width: $desktop-width) {
+    width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 140px;
+  }
 
   &__wrapper {
     padding: 0 16px;
@@ -11,14 +16,42 @@
     @media (min-width: $tablet-width) {
       padding: 0 21px;
     }
+    @media (min-width: $desktop-width) {
+      box-sizing: border-box;
+      padding: 0 55px;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__description {
     margin-bottom: 40px;
+
+    @media (min-width: $desktop-width) {
+      width: 310px;
+      text-align: left;
+    }
   }
 
   &__title {
     margin-bottom: 20px;
+
+    @media (min-width: $desktop-width) {
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+  }
+  &__title::after {
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 175px;
+      height: 3px;
+      background-color: $basik-accent;
+    }
   }
 
   &__text {
@@ -29,6 +62,9 @@
     @media (min-width: $tablet-width) {
       margin-bottom: 30px;
     }
+    @media (min-width: $desktop-width) {
+      width: 306px;
+    }
   }
 
   &__title-contact {
@@ -38,12 +74,57 @@
     font-weight: 500;
     line-height: 34px;
     color: $link-dark;
+
+    @media (min-width: $desktop-width) {
+      font-size: 22px;
+      text-align: center;
+    }
   }
 
   &__link-contact {
     font-size: 18px;
     line-height: 32px;
     color: $basik-accent;
+
+    @media (min-width: $desktop-width) {
+      display: block;
+      font-size: 20px;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+
+  &__link-contact:hover,
+  &__link-contact:focus,
+  &__link-contact:active {
+    color: $black;
+
+    @media (min-width: $desktop-width) {
+      color: $accent-hover;
+    }
+  }
+
+  &__link-contact:hover svg,
+  &__link-contact:focus,
+  &__link-contact:active {
+    color: $accent-hover;
+
+    @media (min-width: $desktop-width) {
+      color: $black;
+    }
+  }
+
+  &__link-contact svg {
+    @media (min-width: $desktop-width) {
+      margin-right: 25px;
+      color: $accent-hover;
+    }
+  }
+
+  &__link-contact svg:hover {
+    @media (min-width: $desktop-width) {
+      color: $black;
+    }
   }
 
   &__list {
@@ -52,6 +133,11 @@
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: start;
+    }
+    @media (min-width: $desktop-width) {
+      order: -1;
+      width: 770px;
+      margin-right: 90px;
     }
   }
 
@@ -71,11 +157,29 @@
       margin: 0;
     }
 
+    @media (min-width: $desktop-width) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 370px;
+      height: 672px;
+      margin-right: 30px;
+      padding: 40px 30px 30px;
+      border-bottom:  1px solid $nav-dark;
+      border-radius: 6px 6px 6px 6px;
+      background-color: $basik-light;
+    }
+
     &:hover {
       padding: 28px 18px;
       padding-bottom: 95px;
       border: 3px solid $basik-accent;
       border-bottom: none;
+
+      @media (min-width: $desktop-width) {
+        padding: 38px 28px 28px;
+        border-bottom: 3px solid $basik-accent;
+      }
     }
     &:hover h3,
     &:hover span {
@@ -88,6 +192,9 @@
 
   &__item:last-child {
     margin-bottom: 0;
+    @media (min-width: $desktop-width) {
+      margin-right: 0;
+    }
   }
 
   &__item-title {
@@ -95,6 +202,11 @@
     margin-bottom: 10px;
     line-height: 34px;
     color: $title-accent;
+
+    @media (min-width: $desktop-width) {
+      font-size: 28px;
+      line-height: 34px;
+    }
   }
 
   &__item-price {
@@ -104,6 +216,20 @@
     font-weight: 700;
     line-height: 34px;
     color: $title-accent;
+
+    @media (min-width: $desktop-width) {
+      font-size: 25px;
+      line-height: 34px;
+    }
+  }
+
+  &__item-container {
+    @media (min-width: $desktop-width) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
   }
 
   &__item-title-description {
@@ -116,6 +242,12 @@
     line-height: 24px;
     color: $second-dark;
     border-bottom: 1px solid $nav-dark;
+
+    @media (min-width: $desktop-width) {
+      margin-bottom: 30px;
+      padding-bottom: 28px;
+      text-align: left;
+    }
   }
 
   &__item-description-list {
@@ -128,6 +260,10 @@
     line-height: 32px;
     color: $second-dark;
     text-align: left;
+
+    @media (min-width: $desktop-width) {
+      margin-bottom: 15px;
+    }
 
     &::before {
       content: "";
@@ -146,5 +282,12 @@
     left: 0;
     border: none;
     outline: none;
+
+    @media (min-width: $desktop-width) {
+      position: static;
+      padding: 30px 70px;
+      margin: 0 auto;
+      width: 310px;
+    }
   }
 }
