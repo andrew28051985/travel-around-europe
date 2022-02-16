@@ -115,7 +115,9 @@
   }
 
   &__link-contact svg {
+    display: none;
     @media (min-width: $desktop-width) {
+      display: inline;
       margin-right: 25px;
       color: $accent-hover;
     }
