@@ -12,8 +12,22 @@
     }
   }
   @media (min-width: $desktop-width) {
+    position: relative;
     width: 1280px;
     margin: 0 auto;
+    margin-bottom: 234px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 134px;
+      left: -96px;
+      width: 1444px;
+      height: 1089px;
+      background: url("../img/map-maxi.svg") no-repeat;
+      z-index: -1;
+    }
+
     &__wrapper-nav {
       width: 900px;
       margin-right: auto;
