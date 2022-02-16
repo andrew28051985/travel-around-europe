@@ -16,4 +16,10 @@
     line-height: 45px;
     color: $second-dark;
   }
+  @media (min-width: $desktop-width) {
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 90px;
+    letter-spacing: -1.245px;
+  }
 }
