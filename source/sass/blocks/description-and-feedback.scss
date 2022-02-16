@@ -21,10 +21,11 @@
       position: absolute;
       content: "";
       top: 134px;
-      left: -96px;
-      width: 1444px;
+      left: 0;//-96px;
+      width: 100%;//1280px;
       height: 1089px;
       background: url("../img/map-maxi.svg") no-repeat;
+      background-size: contain;
       z-index: -1;
     }
 
@@ -33,6 +34,12 @@
       margin-right: auto;
       margin-bottom: 80px;
       padding: 0 0 0 55px;
+    }
+  }
+  @media (min-width: $desktop-width-full) {
+    &::after {
+      left: -96px;
+      width: 1449px;
     }
   }
 }
