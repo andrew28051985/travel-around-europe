@@ -1,19 +1,25 @@
 .card-description-and-feedback {
+
   &__item {
-    @media (min-width: $desktop-width) {
-      padding: 0 55px;
-      display: flex;
-      align-items: center;
-    }
-  }
-  &__wrapper-description{
-    margin-bottom: 50px;
-    padding: 0 16px;
     display: none;
 
     &--active {
       display: block;
     }
+
+    @media (min-width: $desktop-width) {
+      padding: 0 55px;
+      display: none;
+      align-items: center;
+
+      &--active {
+        display: flex;
+      }
+    }
+  }
+  &__wrapper-description{
+    margin-bottom: 50px;
+    padding: 0 16px;
 
     @media (min-width: $tablet-width) {
       padding: 0 24px;
@@ -116,9 +122,77 @@
 
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/greece-bg.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
     }
     @media (min-width: $desktop-width) {
       background: $dodgerBlue url("../img/greece-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+  }
+  &__wrapper-feedback--albania {
+    background: $dodgerBlue url("../img/albania-mini.jpg") no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+
+    @media (min-width: $tablet-width) {
+      background: $dodgerBlue url("../img/albania-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+    @media (min-width: $desktop-width) {
+      background: $dodgerBlue url("../img/albania-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+  }
+  &__wrapper-feedback--macedonia {
+    background: $dodgerBlue url("../img/macedonia-mini.jpg") no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+
+    @media (min-width: $tablet-width) {
+      background: $dodgerBlue url("../img/macedonia-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+    @media (min-width: $desktop-width) {
+      background: $dodgerBlue url("../img/macedonia-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+  }
+  &__wrapper-feedback--montenegro {
+    background: $dodgerBlue url("../img/montenegro-mini.jpg") no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+
+    @media (min-width: $tablet-width) {
+      background: $dodgerBlue url("../img/montenegro-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+    @media (min-width: $desktop-width) {
+      background: $dodgerBlue url("../img/montenegro-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+  }
+  &__wrapper-feedback--croatia {
+    background: $dodgerBlue url("../img/croatia-mini.jpg") no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+
+    @media (min-width: $tablet-width) {
+      background: $dodgerBlue url("../img/croatia-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+    @media (min-width: $desktop-width) {
+      background: $dodgerBlue url("../img/croatia-bg-maxi.jpg") no-repeat;
+      background-origin: content-box;
+      background-size: cover;
     }
   }
 
