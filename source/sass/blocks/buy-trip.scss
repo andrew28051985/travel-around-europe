@@ -10,6 +10,18 @@
     background: $second-light url("../img/modal-bg.jpg") no-repeat;
   }
 
+  &--active {
+    display: block;
+    position: fixed;
+    top: calc(50% - 222px);
+    left: 0;
+    z-index: 99;
+
+    @media (min-width: $tablet-width) {
+      left: calc(50% - 360px);
+    }
+  }
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
