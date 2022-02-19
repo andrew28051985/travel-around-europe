@@ -1,8 +1,11 @@
+"use strict";
+
 const navToggle = document.querySelector(".page-header__toggle-nav");
 const navLogo = document.querySelector(".logo");
 const navWrapper = document.querySelector(".page-header__wrapper-nav");
 
 let ScrollPosition = 0;
+let isModalActive = false;
 const description = document.querySelector(".section-nav__list");
 const links = document.querySelectorAll(".section-nav__link");
 const cardTitleDescriptions = document.querySelectorAll(".card-description-and-feedback__title-description");
@@ -34,17 +37,19 @@ const navigation = () => {
       navWrapper.classList.remove("page-header__wrapper-nav--closed-nav")
       navWrapper.classList.add("page-header__wrapper-nav--opened-nav")
       navLogo.classList.add("logo--opened-nav");
+      document.addEventListener('scroll', onScrollMenuClose);
     } else {
       navToggle.classList.remove("page-header__toggle-nav--opened-nav")
       navToggle.classList.add("page-header__toggle-nav--closed-nav")
       navWrapper.classList.remove("page-header__wrapper-nav--opened-nav")
       navWrapper.classList.add("page-header__wrapper-nav--closed-nav")
       navLogo.classList.remove("logo--opened-nav");
+      document.removeEventListener('scroll', onScrollMenuClose);
     }
   });
 };
 
-document.addEventListener('scroll', function(e) {
+const onScrollMenuClose = () => {
   ScrollPosition = window.scrollY;
   if (ScrollPosition > 300) {
     navToggle.classList.remove("page-header__toggle-nav--opened-nav")
@@ -52,8 +57,9 @@ document.addEventListener('scroll', function(e) {
     navWrapper.classList.remove("page-header__wrapper-nav--opened-nav")
     navWrapper.classList.add("page-header__wrapper-nav--closed-nav")
     navLogo.classList.remove("logo--opened-nav");
+    document.removeEventListener('scroll', onScrollMenuClose);
   }
-});
+};
 
 const tabs = () => {
   links.forEach((link) => {
@@ -109,35 +115,40 @@ tabs();
 
 const isEscapeKey = (evt) =>
   evt.key === 'Escape';
+
 const onModalEscKeydown = (evt) => {
   isEscapeKey(evt) ? closeModal() : false;
 };
 
+const onModalCloseClick = (evt) => {
+  const target = evt.target;
+  const itsButton = target == buttonCloseModal;
+  const itsModal = byTrip.contains(target);
+  (!itsModal || itsButton && isModalActive) ? closeModal() : false;
+};
+
+const closeModalOnClick = () => {
+  document.addEventListener("keydown", onModalEscKeydown);
+  document.addEventListener("click", onModalCloseClick);
+};
+
 const closeModal = () => {
   byTrip.classList.remove("buy-trip--active");
+  isModalActive = false;
+  document.removeEventListener("keydown", onModalEscKeydown);
+  document.removeEventListener("click", closeModalOnClick);
+  document.removeEventListener("click", onModalCloseClick);
 };
 
 const openModal = (button) => {
   for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener("click", () => {
+    button[i].addEventListener("click", (evt) => {
       byTrip.classList.add("buy-trip--active");
-      let isModal = true;
-
-      if (isModal) {
-        buttonCloseModal.addEventListener("click", () => {
-          closeModal();
-        });
-        document.addEventListener("keydown", onModalEscKeydown);
-      } else {
-        isModal = false;
-        buttonCloseModal.removeEventListener("click", closeModal);
-        document.removeEventListener("keydown", onModalEscKeydown);
-      }
+      isModalActive = true;
+      document.addEventListener("click", closeModalOnClick);
     });
   }
 };
 
 openModal(buttonBuyListTrip);
 openModal(buttonBuyListPrice);
-
-
