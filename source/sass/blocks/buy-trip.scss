@@ -14,7 +14,7 @@
     display: block;
     position: fixed;
     top: calc(50% - 222px);
-    left: 0;
+    left: calc(50% - 160px);
     z-index: 99;
 
     @media (min-width: $tablet-width) {
