@@ -90,4 +90,8 @@
       margin: 0 auto;
     }
   }
+  & .form__invalid--email {
+    top: 55px;
+    left: 0;
+  }
 }

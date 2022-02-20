@@ -440,10 +440,10 @@
                 +7
               </label>
               <span class="form__invalid">Данные не верны</span>
-              <input class="form__input form__input--phone" type="tel" id="phone" name="phone" placeholder="Введите 10 цифр номера" required>
+              <input class="form__input form__input--phone" type="tel" id="phone" name="phone" placeholder="Введите 10 цифр номера" minlength="5" maxlength="10" required>
               <label class="form__label visually-hidden" for="email">Email</label>
               <span class="form__invalid form__invalid--email">Данные не верны</span>
-              <input class="form__input" type="email" id="email" name="email" placeholder="E-mail">
+              <input class="form__input form__input--email" type="email" id="email" name="email" placeholder="E-mail">
               <button class="form__button button" type="submit">
                 отправить
               </button>
@@ -590,9 +590,11 @@
           <label class="form__label form__label--phone" for="phone-modal">
             +7
           </label>
-          <input class="form__input form__input--phone" type="tel" id="phone-modal" name="phone" placeholder="Введите 10 цифр номера" required>
+          <span class="form__invalid">Данные не верны</span>
+          <input class="form__input form__input--phone" type="tel" id="phone-modal" name="phone" placeholder="Введите 10 цифр номера" minlength="5" maxlength="10" required>
           <label class="form__label visually-hidden" for="email-modal">Email</label>
-          <input class="form__input" type="email" id="email-modal" name="email" placeholder="E-mail">
+          <span class="form__invalid form__invalid--email">Данные не верны</span>
+          <input class="form__input form__input--email" type="email" id="email-modal" name="email" placeholder="E-mail">
           <button class="form__button button" type="submit">
             отправить
           </button>

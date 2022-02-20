@@ -37,7 +37,7 @@
       flex-basis: 269px;
     }
 
-    &:invalid {
+    &--invalid {
       border: 1px solid $basik-accent;
     }
   }
@@ -64,9 +64,17 @@
     font-size: 12px;
     line-height: 15px;
     color: $basik-accent;
+
+    &--active {
+      display: block;
+    }
   }
   &__invalid--email {
     top: 55px;
+    @media (min-width: $tablet-width) {
+      top: -15px;
+      left: 290px;
+    }
   }
 }
 
