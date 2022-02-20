@@ -14,6 +14,8 @@ const galleryLinks = document.querySelectorAll(".gallery__link");
 const byTrip = document.querySelector(".buy-trip");
 const byTripModal = document.querySelector(".buy-trip__wrapper");
 const buttonCloseModal = byTrip.querySelector(".buy-trip__close-button");
+const sendForm = document.querySelector(".form-send-ok");
+const sendFormButtonClose = sendForm.querySelector(".form-send-ok__close-button");
 const buttonBuyListTrip = document.querySelectorAll(".card-description-and-feedback__button");
 const buttonBuyListPrice = document.querySelectorAll(".price__item-button");
 const NUMBER_COUNTRY = 10;
@@ -135,10 +137,12 @@ const closeModalOnClick = () => {
 
 const closeModal = () => {
   byTrip.classList.remove("buy-trip--active");
+  sendForm.classList.add("form-send-ok--no-active");
   isModalActive = false;
   document.removeEventListener("keydown", onModalEscKeydown);
   document.removeEventListener("click", closeModalOnClick);
   document.removeEventListener("click", onModalCloseClick);
+  document.removeEventListener("mouseover", closeModalOnClick);
 };
 
 const openModal = (button) => {
@@ -230,7 +234,6 @@ validation(inputPhone, inputEmail);
 validation(inputPhoneModal, inputEmailModal);
 
 // Очистка формы
-
 const reset = (nameForm, modal) => {
   const formInputs = nameForm.querySelectorAll('input');
   modal;
@@ -241,12 +244,24 @@ const reset = (nameForm, modal) => {
 
 // Открытие модального окна успешной отправки данных формы
 const openSuccessModal = () => {
-  const modalOk = document.querySelector(".form-send-ok");
-  modalOk.classList.remove("form-send-ok--no-active");
+  document.addEventListener("mouseover", closeModalOnClick);
+  sendForm.classList.remove("form-send-ok--no-active");
+};
+// Открытие модального окна неуспешной отправки данных формы
+const openErrorAlert = (nameForm) => {
+  const alertText = document.createElement("p");
+
+  alertText.classList.add("form__error-text");
+  alertText.textContent = `Ошибка отправки данных!`;
+  nameForm.append(alertText);
+  const errorTrue = nameForm.querySelectorAll(".form__error-text");
+  if (errorTrue.length > 1) {
+    alertText.remove();
+  };
 };
 
 // Отправка формы
-const URL_SERVER = 'https://echo.htmlacademy.ru';
+const URL_SERVER = 'https://echo.htmlacademy.ru1';
 
 const sendData = ((body, onSuccess, onFail) => {
   fetch(
@@ -272,13 +287,10 @@ const sendUserFormData = (nameForm) => {
   nameForm.addEventListener("submit", (evt) => {
     const field = evt.target;
     evt.preventDefault();
-    if (nameForm.contains(field)) {
-      byTrip.classList.remove("buy-trip--active");
-    };
     sendData(
       new FormData(evt.target),
       () => reset(nameForm, openSuccessModal()),
-      () => console.log("Данные НЕотправлены11"),
+      () => openErrorAlert(nameForm),
     );
   });
 };

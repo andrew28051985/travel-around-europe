@@ -26,7 +26,7 @@
     @media (min-width: $tablet-width) {
       width: 720px;
       padding: 72px 60px 89px 0;
-      background: #fbf8f8 url(../img/modal-bg.jpg) no-repeat;
+      background: $second-light url(../img/modal-bg.jpg) no-repeat;
     }
   }
   &__close-button {

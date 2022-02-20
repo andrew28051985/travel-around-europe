@@ -1,18 +1,22 @@
 .form-send-ok {
-  width: 320px;
-  margin: 0 auto;
-
-  @media (min-width: $tablet-width) {
-    width: 720px;
-    height: 444px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $second-light;
-  }
+  visibility: visible;
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0, 0.6);
+  z-index: 5;
 
   &__wrapper {
+    box-sizing: border-box;
     position: relative;
+    width: 320px;
     padding: 100px 16px;
     display: flex;
     justify-content: center;
@@ -20,9 +24,8 @@
     background-color: $second-light;
 
     @media (min-width: $tablet-width) {
-      width: 100%;
-      height: 100%;
-      padding: 0;
+      width: 720px;
+      padding: 179px 165px;
     }
   }
 
@@ -69,6 +72,7 @@
   }
 
   &--no-active {
-    display: none;
+    //display: none;
+    visibility: hidden;
   }
 }

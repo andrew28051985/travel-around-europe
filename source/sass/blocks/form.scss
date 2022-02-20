@@ -76,6 +76,14 @@
       left: 290px;
     }
   }
+
+  &__error-text{
+    position: absolute;
+    bottom: -50px;
+    padding: 0;
+    font-weight: 600;
+    color: $basik-accent;
+  }
 }
 
 .form__input::-webkit-input-placeholder {
