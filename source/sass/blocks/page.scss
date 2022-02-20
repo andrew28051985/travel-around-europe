@@ -2,7 +2,6 @@
   height: 100%;
 
   &__body {
-    position: relative;
     min-width: 320px;
     height: 100%;
 
@@ -20,6 +19,7 @@
   }
 
   &__container {
+    position: relative;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     align-content: start;

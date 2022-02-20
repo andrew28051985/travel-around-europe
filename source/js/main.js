@@ -12,6 +12,7 @@ const cardTitleDescriptions = document.querySelectorAll(".card-description-and-f
 const wrapperDescriptionList = document.querySelectorAll(".card-description-and-feedback__item");
 const galleryLinks = document.querySelectorAll(".gallery__link");
 const byTrip = document.querySelector(".buy-trip");
+const byTripModal = document.querySelector(".buy-trip__wrapper");
 const buttonCloseModal = byTrip.querySelector(".buy-trip__close-button");
 const buttonBuyListTrip = document.querySelectorAll(".card-description-and-feedback__button");
 const buttonBuyListPrice = document.querySelectorAll(".price__item-button");
@@ -123,7 +124,7 @@ const onModalEscKeydown = (evt) => {
 const onModalCloseClick = (evt) => {
   const target = evt.target;
   const itsButton = target == buttonCloseModal;
-  const itsModal = byTrip.contains(target);
+  const itsModal = byTripModal.contains(target);
   (!itsModal || itsButton && isModalActive) ? closeModal() : false;
 };
 
