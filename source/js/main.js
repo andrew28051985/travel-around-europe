@@ -261,7 +261,7 @@ const openErrorAlert = (nameForm) => {
 };
 
 // Отправка формы
-const URL_SERVER = 'https://echo.htmlacademy.ru1';
+const URL_SERVER = 'https://echo.htmlacademy.ru';
 
 const sendData = ((body, onSuccess, onFail) => {
   fetch(
