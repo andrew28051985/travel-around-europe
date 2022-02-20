@@ -228,3 +228,60 @@ const validation = (namePhone, nameEmail) => {
 
 validation(inputPhone, inputEmail);
 validation(inputPhoneModal, inputEmailModal);
+
+// Очистка формы
+
+const reset = (nameForm, modal) => {
+  const formInputs = nameForm.querySelectorAll('input');
+  modal;
+  formInputs.forEach((input) => {
+    input.value = '';
+  });
+};
+
+// Открытие модального окна успешной отправки данных формы
+const openSuccessModal = () => {
+  const modalOk = document.querySelector(".form-send-ok");
+  modalOk.classList.remove("form-send-ok--no-active");
+};
+
+// Отправка формы
+const URL_SERVER = 'https://echo.htmlacademy.ru';
+
+const sendData = ((body, onSuccess, onFail) => {
+  fetch(
+    URL_SERVER,
+    {
+      method: 'POST',
+      body,
+    },
+  )
+    .then((responce) => {
+      if (responce.ok) {
+        onSuccess();
+      } else {
+        onFail();
+      }
+    })
+    .catch(() => {
+      onFail();
+    });
+});
+
+const sendUserFormData = (nameForm) => {
+  nameForm.addEventListener("submit", (evt) => {
+    const field = evt.target;
+    evt.preventDefault();
+    if (nameForm.contains(field)) {
+      byTrip.classList.remove("buy-trip--active");
+    };
+    sendData(
+      new FormData(evt.target),
+      () => reset(nameForm, openSuccessModal()),
+      () => console.log("Данные НЕотправлены11"),
+    );
+  });
+};
+
+sendUserFormData(formQuestions);
+sendUserFormData(formModal);
