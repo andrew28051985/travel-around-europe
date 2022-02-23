@@ -1,5 +1,5 @@
 .buy-trip {
-  display: none;
+  display: flex;
   position: fixed;
   right: 0;
   top: 0;
@@ -12,8 +12,9 @@
   background-color: rgba(0,0,0, 0.6);
   z-index: 5;
 
-  &--active {
+  &[hidden] {
     display: flex;
+    visibility: hidden;
   }
 
   &__wrapper {

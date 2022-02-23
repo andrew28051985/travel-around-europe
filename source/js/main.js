@@ -1,11 +1,10 @@
 "use strict";
 
+let ScrollPosition = 0;
+let isModalActive = false;
 const navToggle = document.querySelector(".page-header__toggle-nav");
 const navLogo = document.querySelector(".logo");
 const navWrapper = document.querySelector(".page-header__wrapper-nav");
-
-let ScrollPosition = 0;
-let isModalActive = false;
 const description = document.querySelector(".section-nav__list");
 const links = document.querySelectorAll(".section-nav__link");
 const cardTitleDescriptions = document.querySelectorAll(".card-description-and-feedback__title-description");
@@ -136,8 +135,8 @@ const closeModalOnClick = () => {
 };
 
 const closeModal = () => {
-  byTrip.classList.remove("buy-trip--active");
-  sendForm.classList.add("form-send-ok--no-active");
+  byTrip.hidden = true;
+  sendForm.hidden = true;
   isModalActive = false;
   document.removeEventListener("keydown", onModalEscKeydown);
   document.removeEventListener("click", closeModalOnClick);
@@ -148,7 +147,7 @@ const closeModal = () => {
 const openModal = (button) => {
   for (let i = 0; i < button.length; i++) {
     button[i].addEventListener("click", (evt) => {
-      byTrip.classList.add("buy-trip--active");
+      byTrip.hidden = false;
       isModalActive = true;
       document.addEventListener("click", closeModalOnClick);
     });
@@ -245,7 +244,7 @@ const reset = (nameForm, modal) => {
 // Открытие модального окна успешной отправки данных формы
 const openSuccessModal = () => {
   document.addEventListener("mouseover", closeModalOnClick);
-  sendForm.classList.remove("form-send-ok--no-active");
+  sendForm.hidden = false;
 };
 // Открытие модального окна неуспешной отправки данных формы
 const openErrorAlert = (nameForm) => {

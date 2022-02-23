@@ -1,5 +1,4 @@
 .form-send-ok {
-  visibility: visible;
   display: flex;
   position: fixed;
   right: 0;
@@ -12,6 +11,11 @@
   align-items: center;
   background-color: rgba(0,0,0, 0.6);
   z-index: 5;
+
+  &[hidden] {
+    display: flex;
+    visibility: hidden;
+  }
 
   &__wrapper {
     box-sizing: border-box;
@@ -69,10 +73,5 @@
       line-height: 43px;
       color: $title-dark;
     }
-  }
-
-  &--no-active {
-    //display: none;
-    visibility: hidden;
   }
 }
