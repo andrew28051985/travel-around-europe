@@ -121,12 +121,24 @@
   }
 
   &__wrapper-feedback--greece {
-    background: $dodgerBlue url("../img/greece-bg-mini.jpg") no-repeat;
+    background: $dodgerBlue url("../img/greece-bg.jpg") no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    @media (min-resolution: 2dppx) {
+      background: url("../img/greece-bg@2x.jpg") no-repeat;
+      background-size: 1423px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
 
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/greece-bg.jpg") no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+    @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
+      background: url("../img/greece-bg@2x.jpg") no-repeat;
+      background-size: 2846px auto;
       background-position: 50% 50%;
       background-size: cover;
     }
@@ -135,19 +147,31 @@
       background-position: 50% 50%;
       background-size: cover;
     }
+    @media (min-width: $desktop-width) and (min-resolution: 2dppx) {
+      background: url("../img/greece-bg-maxi@2x.jpg") no-repeat;
+      background-size: 860px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
   }
   &__wrapper-feedback--albania {
     background: $dodgerBlue url("../img/albania-mini.jpg") no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-
+    @media (min-resolution: 2dppx) {
+      background: url("../img/albania-bg-maxi.jpg") no-repeat;
+      background-size: 430px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/albania-bg-maxi.jpg") no-repeat;
       background-position: 50% 50%;
       background-size: cover;
     }
-    @media (min-width: $desktop-width) {
-      background: $dodgerBlue url("../img/albania-bg-maxi.jpg") no-repeat;
+    @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
+      background: url("../img/albania-bg-maxi@2x.jpg") no-repeat;
+      background-size: 860px auto;
       background-position: 50% 50%;
       background-size: cover;
     }
@@ -156,14 +180,20 @@
     background: $dodgerBlue url("../img/macedonia-mini.jpg") no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-
+    @media (min-resolution: 2dppx) {
+      background: url("../img/macedonia-bg-maxi.jpg") no-repeat;
+      background-size: 430px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/macedonia-bg-maxi.jpg") no-repeat;
       background-position: 50% 50%;
       background-size: cover;
     }
-    @media (min-width: $desktop-width) {
-      background: $dodgerBlue url("../img/macedonia-bg-maxi.jpg") no-repeat;
+    @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
+      background: url("../img/macedonia-bg-maxi@2x.jpg") no-repeat;
+      background-size: 860px auto;
       background-position: 50% 50%;
       background-size: cover;
     }
@@ -172,14 +202,20 @@
     background: $dodgerBlue url("../img/montenegro-mini.jpg") no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-
+    @media (min-resolution: 2dppx) {
+      background: url("../img/montenegro-bg-maxi.jpg") no-repeat;
+      background-size: 430px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/montenegro-bg-maxi.jpg") no-repeat;
       background-position: 50% 50%;
       background-size: cover;
     }
-    @media (min-width: $desktop-width) {
-      background: $dodgerBlue url("../img/montenegro-bg-maxi.jpg") no-repeat;
+    @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
+      background: url("../img/montenegro-bg-maxi@2x.jpg") no-repeat;
+      background-size: 860px auto;
       background-position: 50% 50%;
       background-size: cover;
     }
@@ -188,14 +224,20 @@
     background: $dodgerBlue url("../img/croatia-mini.jpg") no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-
+    @media (min-resolution: 2dppx) {
+      background: url("../img/croatia-bg-maxi.jpg") no-repeat;
+      background-size: 430px auto;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
     @media (min-width: $tablet-width) {
       background: $dodgerBlue url("../img/croatia-bg-maxi.jpg") no-repeat;
       background-position: 50% 50%;
       background-size: cover;
     }
-    @media (min-width: $desktop-width) {
-      background: $dodgerBlue url("../img/croatia-bg-maxi.jpg") no-repeat;
+    @media (min-width: $tablet-width) and (min-resolution: 2dppx) {
+      background: url("../img/croatia-bg-maxi@2x.jpg") no-repeat;
+      background-size: 860px auto;
       background-position: 50% 50%;
       background-size: cover;
     }
