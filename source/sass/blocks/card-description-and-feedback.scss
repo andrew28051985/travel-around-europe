@@ -1,5 +1,4 @@
 .card-description-and-feedback {
-
   &__item {
     display: none;
 
@@ -8,7 +7,6 @@
     }
 
     @media (min-width: $desktop-width) {
-      padding: 0 55px;
       display: none;
       align-items: center;
 
@@ -18,18 +16,22 @@
     }
   }
   &__wrapper-description{
+    width: 288px;
+    margin: 0 auto;
     margin-bottom: 50px;
     padding: 0 16px;
 
     @media (min-width: $tablet-width) {
-      padding: 0 24px;
+      width: 726px;
+      padding: 0 21px;
       margin-bottom: 30px;
     }
     @media (min-width: $desktop-width) {
       width: 425px;
+      margin: 0;
       margin-bottom: 0;
       margin-right: 45px;
-      padding: 0;
+      padding: 0 0;
       text-align: left;
     }
   }
@@ -105,13 +107,16 @@
     height: 415px;
 
     @media (min-width: $desktop-width) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 430px;
       height: 596px;
       margin-bottom: 0;
     }
 
     &--active {
-      display: block;
+      display: flex;
     }
   }
 
@@ -200,7 +205,7 @@
     position: absolute;
     content: "";
     top: 50px;
-    left: 26px;
+    left: calc(50% - 134px);
     width: 268px;
     padding: 30px 20px 34px;
     box-sizing: border-box;
@@ -209,9 +214,14 @@
     @media (min-width: $tablet-width) {
       width: 382px;
       padding: 30px;
-      left: 193px;
       top: 80px;
+      left: calc(50% - 191px);
       text-align: left;
+    }
+
+    @media (min-width: $desktop-width) {
+      position: initial;
+      margin-right: -585px;
     }
   }
 

@@ -7,28 +7,33 @@
   }
 
   &__wrapper {
-    background-color: $dodgerBlue;
-    background: url("../img/background-mini.jpg") no-repeat;
     @media (min-width: $tablet-width) {
+      padding-top: 60px;
+      padding-bottom: 83px;
       position: relative;
-      width: 768px;
       background: url("../img/background-medium.jpg") no-repeat;
+      background-size: cover;
     }
     @media (min-width: $desktop-width) {
-      min-width: 1280px;
-      width: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
       background: url("../img/background-maxi.jpg") no-repeat;
       background-size: cover;
     }
   }
 
   &__container {
+    @media (min-width: $tablet-width) {
+      width: 398px;
+      padding: 0 185px;
+      margin: 0 auto;
+    }
+
     @media (min-width: $desktop-width) {
       box-sizing: border-box;
       width: 1280px;
       margin: 0 auto;
-      padding: 0 55px;
-      padding-bottom: 289px;
+      padding: 185px 58px 290px 0;
     }
   }
 
@@ -40,17 +45,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    @media (min-width: $tablet-width) and (max-width: $tablet-width-only){
-      height: 284px;
-      padding-top: 60px;
+      background-color: $dodgerBlue;
+      background: url("../img/background-mini.jpg") no-repeat;
+      background-size: cover;
     }
     @media (min-width: $desktop-width) {
       box-sizing: border-box;
       width: 412px;
       margin-left: auto;
       margin-bottom: 30px;
-      padding-top: 185px;
     }
   }
   &__title {
@@ -60,6 +63,10 @@
     line-height: 36px;
     text-align: center;
     color: $basik-light;
+
+    @media (max-width: $mobile-width-only) {
+      width: 288px;
+    }
 
     @media (min-width: $tablet-width) {
       font-size: 30px;
@@ -79,19 +86,23 @@
   }
 
   &__text-block {
+    width: 288px;
+    margin: 0 auto;
+
     & p {
       margin: 0;
       padding: 0;
       margin-bottom: 20px;
 
       @media (min-width: $tablet-width) {
-        margin-bottom: 15px;
+        margin: 15px 0;
         line-height: 27px;
         letter-spacing: -0.466667px;
         color: $basik-light;
       }
       @media (min-width: $desktop-width) {
-        margin-bottom: 40px;
+        margin: 0 0;
+        margin-bottom: 39px;
         text-align: left;
       }
     }
@@ -102,18 +113,17 @@
       color: #2C2E3F;
     }
     @media (min-width: $tablet-width) and (max-width:$tablet-width-only) {
-      position: absolute;
-      top: 120px;
-      left: 185px;
       width: 398px;
-      margin: 0 auto;
+      margin: 0;
     }
     @media (min-width: $desktop-width) {
       width: 340px;
-      padding-left: 760px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      margin: 0;
+      margin-left: auto;
+      margin-right: 70px;
     }
   }
 

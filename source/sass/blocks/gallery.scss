@@ -12,7 +12,7 @@
     &__list {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
     }
   }
@@ -34,8 +34,9 @@
     }
     @media (min-width: $desktop-width) {
       margin-bottom: 100px;
+      margin-right: 20px;
       box-sizing: border-box;
-      &:nth-child(3) {
+      &:nth-child(3n) {
         margin-right: 0;
       }
     }

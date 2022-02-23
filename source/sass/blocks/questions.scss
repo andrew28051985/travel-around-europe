@@ -1,6 +1,7 @@
 .questions {
   box-sizing: border-box;
   margin-bottom: 60px;
+  background-color: $second-light;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 80px;
@@ -11,19 +12,24 @@
     margin: 0 auto;
     margin-bottom: 160px;
     padding: 0 55px;
+    background-color: $basik-light;
   }
 
   &__wrapper {
     box-sizing: border-box;
-    padding: 50px 16px;
-    background-color: $second-light;
+    width: 288px;
+    margin: 0 auto;
+    padding: 50px 0;
 
     @media (min-width: $tablet-width) {
+      width: 100%;
       padding: 70px 54px 69px 55px;
       background: $accent-hover url("../img/question-bg-medium.jpg") no-repeat;
+      background-size: cover;
     }
 
     @media (min-width: $desktop-width) {
+      margin: 0 0;
       width: 844px;
       height: 455px;
       background: $accent-hover url("../img/question-bg-maxi.jpg") no-repeat;

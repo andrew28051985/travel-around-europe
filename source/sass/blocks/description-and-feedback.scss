@@ -1,5 +1,7 @@
 .description-and-feedback {
   &__wrapper-nav {
+    width: 288px;
+    margin: 0 auto;
     padding: 0 16px;
     padding-right: 0;
     margin-bottom: 24px;
@@ -7,14 +9,16 @@
 
   @media (min-width: $tablet-width) {
     &__wrapper-nav {
+      width: 747px;
       padding: 0 0 0 21px;
       margin-bottom: 30px;
     }
   }
   @media (min-width: $desktop-width) {
     position: relative;
-    width: 1280px;
+    width: 1170px;
     margin: 0 auto;
+    padding: 0 55px;
     margin-bottom: 234px;
 
     &::after {
@@ -30,10 +34,11 @@
     }
 
     &__wrapper-nav {
-      width: 900px;
+      width: 902px;
+      margin: 0 0 0 0;
       margin-right: auto;
       margin-bottom: 80px;
-      padding: 0 0 0 55px;
+      padding: 0 0 0 0;
     }
   }
   @media (min-width: $desktop-width-full) {

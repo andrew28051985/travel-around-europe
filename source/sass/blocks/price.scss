@@ -5,19 +5,22 @@
     margin-bottom: 110px;
   }
   @media (min-width: $desktop-width) {
-    width: 1280px;
-    margin: 0 auto;
     margin-bottom: 140px;
   }
 
   &__wrapper {
+    width: 288px;
+    margin: 0 auto;
     padding: 0 16px;
 
     @media (min-width: $tablet-width) {
+      width: 726px;
       padding: 0 21px;
     }
     @media (min-width: $desktop-width) {
       box-sizing: border-box;
+      width: 1280px;
+      margin: 0 auto;
       padding: 0 55px;
       display: flex;
       align-items: center;

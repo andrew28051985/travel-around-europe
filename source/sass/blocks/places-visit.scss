@@ -10,15 +10,20 @@
   }
 
   &__wrapper {
+    width: 288px;
+    margin: 0 auto;
+
     @media (max-width: $mobile-width-only) {
       padding: 0 16px;
     }
 
     @media (min-width: $tablet-width) {
+      width: 616px;
       padding: 0 76px;
     }
 
     @media (min-width: $desktop-width) {
+      width: 1170px;
       padding: 0 55px;
     }
   }
