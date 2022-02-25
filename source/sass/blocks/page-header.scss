@@ -145,8 +145,10 @@
     text-decoration: underline;
 
     &:hover,
+    &:hover .page-header__icon-phone,
     &:focus {
       color: $basik-accent;
+      stroke: $basik-accent;
       outline: none;
     }
 
@@ -154,14 +156,12 @@
       display: none;
     }
   }
-  &__phone-link svg {
+  &__icon-phone {
     position: absolute;
     left: -30px;
     top: 5px;
-
-    &:hover,
-    &:focus {
-      color: $basik-accent;
-    }
+    fill: none;
+    stroke-width: 2px;
+    stroke: $link-dark;
   }
 }

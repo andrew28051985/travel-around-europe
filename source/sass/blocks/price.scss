@@ -107,28 +107,33 @@
     }
   }
 
-  &__link-contact:hover svg,
+  &__link-contact:hover .price__icon-phone,
   &__link-contact:focus,
   &__link-contact:active {
     color: $accent-hover;
+    stroke: $accent-hover;
 
     @media (min-width: $desktop-width) {
       color: $black;
+      stroke: $black;
     }
   }
 
-  &__link-contact svg {
+  &__icon-phone {
     display: none;
     @media (min-width: $desktop-width) {
       display: inline;
+      vertical-align: top;
       margin-right: 25px;
-      color: $accent-hover;
+      fill: none;
+      stroke-width: 2px;
+      stroke: $basik-accent;
     }
   }
 
-  &__link-contact svg:hover {
+  &__icon-phone:hover {
     @media (min-width: $desktop-width) {
-      color: $black;
+      stroke: $black;
     }
   }
 

@@ -141,16 +141,19 @@
     font-size: 14px;
     line-height: 17px;
     text-decoration: none;
-    &:hover svg,
-    &:focus svg{
-      color: $basik-accent;
+    &:hover .page-footer__icon-email,
+    &:focus .page-footer__icon-email{
+      stroke: $basik-accent;
+      fill: $basik-accent;
     }
   }
-  &__link-email svg {
+  &__icon-email {
     position: absolute;
     left: 5px;
     top: -2px;
-    color: $line-footer;
+    fill: none;
+    stroke: $line-footer;
+    fill: $line-footer;
 
     @media (min-width: $tablet-width) {
       left: 0;
@@ -161,16 +164,18 @@
     @media (min-width: $tablet-width) {
       padding-left: 45px;
     }
-    &:hover svg,
-    &:focus svg{
-      color: $basik-accent;
+    &:hover .page-footer__icon-phone,
+    &:focus .page-footer__icon-phone {
+      stroke: $basik-accent;
     }
   }
-  &__link-phone svg {
+  &__icon-phone {
     position: absolute;
     left: 25px;
     top: -2px;
-    color: $line-footer;
+    fill: none;
+    stroke-width: 2px;
+    stroke: $line-footer;
 
     @media (min-width: $tablet-width) {
       left: 0;
